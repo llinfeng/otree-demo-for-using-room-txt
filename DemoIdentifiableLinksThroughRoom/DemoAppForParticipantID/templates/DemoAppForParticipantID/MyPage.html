@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Demo input form
+{% endblock %}
+
+{% block content %}
+    It is assumed that the subject have arrived at this page using a
+    "room-link", which assigned an identifier for the subject in the
+    <b>participant.label</b> field.
+
+    <div>
+        Based on the unique link you used to access this page, note that
+
+        <center>
+        your <b>participant.label</b> = 
+        {{ the_participant_id }}.
+        </center>
+
+
+        In the following input box, please enter your participant id again. For
+        demonstration purposes, we will check whether your submission matches with
+        your real participant id and pay you accordingly.
+
+    {% formfields %}
+    </div>
+
+    {% next_button %}
+
+{% endblock %}
